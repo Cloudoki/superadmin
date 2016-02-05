@@ -36,15 +36,23 @@ define (
 
 				// Accounts
 				var grid = this.accountsgrid ();
-				var accountslist = new ListPanel ({title: 'Accounts', grid: grid, addNew: {required: {name: 'New Account', unique: 'required'}}});
+				var accountslist = new ListPanel ({title: 'Accounts', grid: grid, addNew: {required: grid.collection.required}});
 				this.appendPanel (accountslist, 6);
+
+				grid.collection.on('newaccount:save', function() {
+					this.fetch ({reset: true});
+				});
 
 				grid.collection.fetch ({reset: true});
 
 				// Users
 				grid = this.usersgrid ();
-				var userslist = new ListPanel ({title: 'Users', grid: grid, addNew: {required: {email: 'required', firstname: 'New User', lastname: 'required'}}});
+				var userslist = new ListPanel ({title: 'Users', grid: grid, addNew: {required: grid.collection.required}});
 				this.appendPanel (userslist, 6);
+
+				grid.collection.on('newuser:save', function() {
+					this.fetch ({reset: true});
+				});
 
 				grid.collection.fetch ({reset: true});
 
