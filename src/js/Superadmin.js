@@ -4,52 +4,67 @@ define(
 	{
 		var Superadmin = {
 
+			version : 1,
+			authentication: false,	// Ignores token
+			dev: true,
+
 			init : function ()
 			{
-				// Authentication
-				Session.authenticate ();
+				// Load configs
+				Superadmin.config = config;
+				Superadmin.Api = config.apiurl;
+				Superadmin.Session = Session;
 
-				// Set config
-				this.config = config;
+				if (this.authentication) {
+					if (this.dev)	this.authenticate(true);
+					else			this.authenticate();
+
+					this.loadUserData();
+				}
+				else
+					this.begin();
 
 				return this;
 			},
 
-			activate: function ()
-			{
-				// First load essential user data
-				Session.loadEssentialData (function ()
-				{
-					// Load navigation
-					// this.navigation = new NavigationView (this);
-					// $('#sidebar').html(this.navigation.render().el);
+			// Oauth2 Authentication
+			authenticate: function(dev) {
 
-					// And then rout the router.
-					this.router = new Router ();
+				var token = window.localStorage.getItem('token');
 
-					Backbone.history.start();
+				//Check if there is authentication
+				if(token && token.length > 9)
+				{	
+					Superadmin.Session.authenticationtoken = token;
+					Backbone.accesstoken = token;
+
+				}
+				else { 
+					if (dev)
+						this.authenticationtoken = "the-Golden-Key-28chars-token";
+					else
+						window.location = "/login.html";
+				}
+			},
+
+			// Get User data after authentication;
+			// Inits the backbone views & router
+			loadUserData: function() {
+
+				this.Session.loadEssentialData (function ()	{
+					
+					this.begin();
 				});
 			},
 
-			// render: function ()
-			// {
-			// 	// Do some rendering
-			// 	$('#page').html (this.view.render ().el);
+			// Callbak function after user authentication
+			begin: function() {
 
-			// 	// this.navigation.handleSidebarMenu();
-			// },
+				// Router
+				Superadmin.Router = new Router ();
 
-			// setView: function (view)
-			// {
-			// 	// Remove the old
-			// 	if (this.view) this.view.remove();
-
-			// 	Session.trigger('destroy:view');
-
-			// 	this.view = view;
-
-			// 	this.render();
-			// },
+				Backbone.history.start();
+			}
 		};
 
 		/*
