@@ -1,5 +1,4 @@
 src/vendor
-
-node_modules
 dist
-staging
+node_modules
+npm-debug.log
