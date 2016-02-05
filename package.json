@@ -33,7 +33,7 @@
     "http-server": "^0.8.5"
   },
   "scripts": {
-    "install": "bower install",
+    "postinstall": "bower install",
     "gulp": "gulp",
     "build": "gulp build",
     "clean": "gulp clean",
