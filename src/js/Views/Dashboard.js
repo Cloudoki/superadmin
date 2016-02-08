@@ -69,7 +69,7 @@ define (
 						{ name: "id", label: "ID", editable: false,  cell: "string"},
 						{ name: "unique", label: "Unique Name", cell: "string"},
 						{ name: "name", label: "Name", cell: "string"},
-						{ name: "delete", label: "Delete", cell: DeleteCell }
+						{ name: "delete", sortable: false, label: "Delete", cell: DeleteCell }
 					]
 				});
 			},
@@ -85,7 +85,7 @@ define (
 						{ name: "email", label: "E-mail", cell: "email"},
 						{ name: "firstname", label: "First Name", cell: "string"},
 						{ name: "lastname", label: "Last Name", cell: "string"},
-						{ name: "delete", label: "Delete", cell: DeleteCell }
+						{ name: "delete", sortable: false, label: "Delete", cell: DeleteCell }
 					]
 				});
 			}

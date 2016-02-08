@@ -34,12 +34,12 @@ define(
 
 				//Check if there is authentication
 				if(token && token.length > 9)
-				{	
+				{
 					Superadmin.Session.authenticationtoken = token;
 					Backbone.accesstoken = token;
 
 				}
-				else { 
+				else {
 					if (dev)
 						this.authenticationtoken = "the-Golden-Key-28chars-token";
 					else
@@ -52,7 +52,7 @@ define(
 			loadUserData: function() {
 
 				this.Session.loadEssentialData (function ()	{
-					
+
 					this.begin();
 				});
 			},
