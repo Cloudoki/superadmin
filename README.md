@@ -30,6 +30,7 @@ After adding the package, you need to include it into the build process (gulpfil
 - **npm run gulp** will build the files inside the /dist folder and perform a watch. You are ready to start developing
 - **npm run clean** will clean the dist folder
 - **npm run build** will build the files inside the /dist folder without triggering a watch
+- **npm run update** will update dependencies and run build
 
 ### Run
 

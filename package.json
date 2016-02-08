@@ -37,6 +37,7 @@
     "gulp": "gulp",
     "build": "gulp build",
     "clean": "gulp clean",
+    "update": "bower update; gulp build",
     "static": "http-server dist/"
   }
 }
