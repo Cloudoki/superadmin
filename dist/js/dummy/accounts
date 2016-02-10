@@ -1,0 +1,18 @@
+[
+	{
+    "id":1,
+    "type":"account",
+    "name":"Cloudoki",
+    "unique":"cloudoki",
+    "active":1,
+    "users":[1,2]
+  },
+	{
+    "id":2,
+    "type":"account",
+    "name":"Donderlab Technologies",
+    "unique":"donderlab",
+    "active":1,
+    "users":[]
+  }
+]
