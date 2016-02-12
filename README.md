@@ -32,6 +32,9 @@ After adding the package, you need to include it into the build process (gulpfil
 - **npm run build** will build the files inside the /dist folder without triggering a watch
 - **npm run update** will update dependencies and run build
 
+## NOTE:
+If tasks are not working try deleting the node_modules folder and run `npm install` again.
+
 ### Run
 
 Run the command:
