@@ -1,5 +1,3 @@
-var fs = require('fs');
-
 // Include gulp & del
 var gulp = require('gulp');
 var del = require('del');
@@ -18,17 +16,6 @@ var dirs = {
     staging: 'staging',
     release: 'dist'
 }
-
-// Use example config if no config is present
-gulp.task('copy:config', function () {
-    try {
-        fs.accessSync(dirs.source +'/js/config.js', fs.F_OK);
-    } catch (err) {
-        gulp.src(dirs.source + '/js/config-default.js')
-            .pipe(rename('config.js'))
-            .pipe(gulp.dest(dirs.release + '/js/'));
-    }
-});
 
 // Clean
 gulp.task('clean', function (cb) {
@@ -99,9 +86,9 @@ gulp.task('watch', function() {
 
 // Build and release tasks
 gulp.task('release', function(callback){
-    runSequence('clean', ['copy:config', 'copy:images', 'copy:dummy', 'copy:html', 'copy:scripts', 'sass', 'mustache'], callback);
+    runSequence('clean', ['copy:images', 'copy:dummy', 'copy:html', 'copy:scripts', 'sass', 'mustache'], callback);
 });
 gulp.task('build', function(callback){
-    runSequence('clean', ['copy:config', 'copy:images', 'copy:dummy', 'copy:html', 'copy:scripts', 'sass', 'lint:before', 'mustache'], callback);
+    runSequence('clean', ['copy:images', 'copy:dummy', 'copy:html', 'copy:scripts', 'sass', 'lint:before', 'mustache'], callback);
 });
 gulp.task('default', ['build', 'watch']);
