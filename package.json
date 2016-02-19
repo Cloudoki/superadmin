@@ -5,31 +5,20 @@
   "homepage": "www.cloudoki.com",
   "author": "Rui Molefas",
   "email": "rui@cloudoki.com",
-  "devDependencies": {
-    "bower": "^1.4.1",
-    "del": "^1.2.0",
-    "gulp": "^3.9.0",
-    "gulp-copy": "0.0.2",
-    "gulp-file-contents-to-json": "^0.1.2",
-    "gulp-jshint": "^1.11.2",
-    "gulp-modify": "^0.1.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.0.4",
-    "gulp-to-json": "^1.0.1",
-    "run-sequence": "^1.1.2"
-  },
   "dependencies": {
     "bower": "^1.4.1",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
+    "gulp-cli": "^1.2.1",
     "gulp-copy": "0.0.2",
     "gulp-file-contents-to-json": "^0.1.2",
     "gulp-jshint": "^1.11.2",
     "gulp-modify": "^0.1.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
-    "gulp-to-json": "^1.0.1",
-    "run-sequence": "^1.1.2",
+    "run-sequence": "^1.1.2"
+  },
+  "devDependencies": {
     "http-server": "^0.8.5"
   },
   "scripts": {
