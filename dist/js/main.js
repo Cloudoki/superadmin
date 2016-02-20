@@ -1,43 +1,46 @@
-var pathname = window.location.pathname;
-
-require.config({
-
-	baseUrl : pathname+'js',
-	shim: {
-  		bootstrap: {
-    		deps: ['jquery'],
-    		exports: 'bootstrap'
-  		},
+require.config(
+{
+	baseUrl : '/js/',
+	shim:
+	{
+		bootstrap: {
+			deps: ['jquery'],
+			exports: 'bootstrap'
+		},
 		backgrid: {
 			deps: ['jquery','backbone','underscore'],
 			exports: 'Backgrid'
+		},
+		chosen: {
+			deps: ['jquery'],
+			exports: 'jQuery.fn.chosen'
 		}
 	},
-
-	paths: {
-	    jquery: pathname+'vendor/jquery/dist/jquery.min',
-	    backbone: pathname+'vendor/backbone/backbone-min',
-	    requirejs: pathname+'vendor/requirejs/require',
-	    underscore: pathname+'vendor/underscore/underscore-min',
-	    mustache: pathname+'vendor/mustache.js/mustache',
-	    bootstrap: pathname+'vendor/bootstrap/dist/js/bootstrap.min',
-	    backgrid: pathname+'vendor/backgrid/lib/backgrid.min'
+	paths:
+	{
+		jquery:		'/vendor/jquery/dist/jquery.min',
+		backbone:	'/vendor/backbone/backbone-min',
+		requirejs:	'/vendor/requirejs/require',
+		underscore:	'/vendor/underscore/underscore-min',
+		mustache:	'/vendor/mustache.js/mustache',
+		bootstrap:	'/vendor/bootstrap/dist/js/bootstrap.min',
+		backgrid:	'/vendor/backgrid/lib/backgrid.min',
+		chosen: '/vendor/chosen/chosen.jquery'
 	},
-	
 	urlArgs: "bust=" +  (new Date()).getTime()
 });
 
+/**
+ * Set up the global project name
+ */
 var Superadmin;
 
 require(
-  ['backbone', 'Superadmin', 'bootstrap'],
-  function(Backbone, superadmin, Bootstrap)
-  {
-    $(document).ready(function()
-    {     
-
-      Superadmin = superadmin;
-      Superadmin.init();
-    });
-  }
+	['backbone', 'bootstrap', 'Superadmin'],
+	function(Backbone, bootstrap, sam)
+	{
+		// Start
+		Superadmin = sam.init ();
+		Superadmin.activate ();
+	}
 );

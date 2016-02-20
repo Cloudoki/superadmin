@@ -6,6 +6,7 @@ define (
 			
 			paneltype: 'default',
 			title: 'Panel',
+			template: Templates.panel,
 			
 			events: {
 				'remove' : 'destroy',
@@ -20,16 +21,9 @@ define (
 			{	
 				if(options) $.extend(this, options);
 				
-				// Template data
-				var params = {
-					paneltype: this.paneltype,
-					title: this.title,
-					body: this.body
-				};
-				
 				
 				// Get template
-				this.$el.html (Mustache.render (Templates.panel, params));
+				this.$el.html (Mustache.render (this.template, this));
 				this.$container = this.$el.find(".panel-body").eq(0);
 								
 				return this;

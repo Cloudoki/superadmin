@@ -1,29 +1,15 @@
 define (
-	['backbone'],
-	function (Backbone)
+	['Models/User'],
+	function (User)
 	{
-		var Account = Backbone.Model.extend({
+		var Me = User.extend({
 		
-			typestring: 'me',
-
-			initialize: function() {
-				this.once('change', this.activate);
-			},
-
-			activate: function() {
-				this.trigger('activated');
-			},	
-			
-			url: function ()
+			url: function () 
 			{
-				var url = Superadmin.config.apiurl + this.typestring;
-				
-				if (this.id) url += '/' + this.id;
-				
-				return this.parameters? url + "?" + $.param (this.parameters): url;
+				return Superadmin.config.url + "me?" + $.param ({display: 'full'});
 			}
 		});
 		
-		return Account;
+		return Me;
 	}
 );

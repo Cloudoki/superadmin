@@ -9,48 +9,30 @@
 		<title>Cloudoki Superadmin</title>
 
 		<!-- Vendor CSS -->
-		<link href='vendor/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
 		<link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
-		<link href="vendor/backgrid/lib/backgrid.min.css" rel="stylesheet">
+		<link href="vendor/chosen/chosen.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/main.css">
 
-		<link rel="icon" href="/images/favicon.ico">
+		<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
 	</head>
 
 	<body class="dashboard">
 
-		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
 
 					<a class="navbar-brand" href="/">
 						<img src="/images/Cloud-copper.svg" alt="Cloudoki icon" class="identity" />
-						Cloudoki <strong>Superadmin</strong>
 					</a>
 				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/">Dashboard</a></li>
-						<li><a href="/#team">Teamlog</a></li>
-						<li><a href="http://api.cloudoki.ninja/api-docs">API Documentation</a></li>
-						<li>
-							<div class="profile-avatar">
-								<a href='#logout'><span class="ion-ios7-close-outline"></span></a>
-							</div>
-
-						</li>
-					</ul>
-				</div>
 			</div>
-		</div>
+		</nav>
 
 		<div class="container-fluid">
 			<div class="row">
-				<div id="sidebar" class="col-sm-3 col-md-2 sidebar"></div>
-				<!-- <div id="page" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"></div> -->
-
-				<div id="page" class="col-md-8"></div>
+				<div id="page" class="col-lg-8 col-lg-offset-2"></div>
 			</div>
 		</div>
 

@@ -8,7 +8,7 @@ define (
 			
 			url: function ()
 			{
-				var url = Superadmin.config.apiurl + this.typestring;
+				var url = Superadmin.config.url + this.typestring;
 				
 				if (this.id) url += '/' + this.id;
 				

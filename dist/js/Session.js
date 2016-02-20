@@ -1,21 +1,48 @@
 define(
-	['backbone', 'Superadmin', 'Models/Me'],
-	function (Backbone, Superadmin, Me)
+	['backbone', 'mustache', 'Superadmin', 'Models/Me'],
+	function (Backbone, Mustache, Superadmin, Me)
 	{
 		Session =
 		{
 			user : null,
 
+			authenticate: function (fallback)
+			{
+				var token = window.localStorage.getItem ('token');
+
+				// Check if there is authentication
+				if(token || fallback)
+
+					this.authenticationtoken = token && token.length >= 18? token: fallback;
+
+				else window.location = "/login.html";
+			},
+
+
 			// Loads logged user data
 			loadEssentialData : function (callback)
 			{
-				this.user = new Me();
+				// Load me.
+				this.user = new Me ();
+				this.user.fetch({error: this.revoke});
 
-				this.user.once("activated", function () {
-					callback();
-				}.bind(this));
+				// Continue
+				callback ();
+			},
 
-				this.user.fetch({error: this.authError.bind(this)});
+			revoke: function ()
+			{
+				this.user = this.authenticationtoken = null;
+				window.localStorage.removeItem ('token');
+
+				// if (!Superadmin.passthrough)
+
+					window.location = "/login.html";
+			},
+
+			isLoaded : function ()
+			{
+				return this.user !== null;
 			},
 
 			render: function ()
@@ -34,22 +61,6 @@ define(
 				this.view = view;
 
 				this.render();
-			},
-
-			// Error on API, for example
-			authError: function() {
-				this.logout();
-			},
-
-			// Logout user
-			logout: function() {
-
-				this.authenticationtoken = null;
-				localStorage.removeItem('token');
-
-				var r = /[^\/]*$/;
-				var path = window.location.href.replace(r, '');
-				window.location = path;
 			}
 		};
 

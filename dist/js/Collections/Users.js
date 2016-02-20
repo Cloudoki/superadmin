@@ -21,7 +21,7 @@ define (
 
 			url : function()
 			{
-				var url = Superadmin.config.apiurl + this.typestring;
+				var url = Superadmin.config.url + this.typestring;
 
 				return this.parameters? url + "?" + $.param (this.parameters): url;
 			},
@@ -29,7 +29,7 @@ define (
 			patchModel : function (model)
 			{
 				// Patch model, if changed
-				if (Object.keys (model.changed).length && !model.isNew()) {
+				if (Object.keys(model.changed).length && !model.isNew()) {
 					model.save(model.changed, {patch: true});
 				}
 			},
@@ -37,7 +37,7 @@ define (
 			/**
 			 * Compare the model attributes with the required default values.
 			 * @param  {Backgrid.model} model 	The model that was edited.
-			 * @return {boolean}       					The evaluation of the comparison
+			 * @return {boolean}       			The evaluation of the comparison
 			 */
 			checkAllRequired: function (model)
 			{

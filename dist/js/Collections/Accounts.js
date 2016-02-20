@@ -8,7 +8,7 @@ define (
 
 			model: Account,
 
-			required: {name: 'New Account', unique: 'Unique'},
+			required: {name: 'New Account', slug: 'Unique'},
 
 			initialize : function (options)
 			{
@@ -21,7 +21,7 @@ define (
 
 			url : function()
 			{
-				var url = Superadmin.config.apiurl + this.typestring;
+				var url = Superadmin.config.url + this.typestring;
 
 				return this.parameters? url + "?" + $.param (this.parameters): url;
 			},
@@ -29,7 +29,7 @@ define (
 			patchModel : function (model)
 			{
 				// Patch model, if changed
-				if (Object.keys (model.changed).length && !model.isNew()) {
+				if (Object.keys(model.changed).length && !model.isNew()) {
 					model.save(model.changed, {patch: true});
 				}
 			},

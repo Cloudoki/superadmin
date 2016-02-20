@@ -1,0 +1,35 @@
+/**
+ *	Define (and override) Variables
+ */
+$main-color: #465a65;
+$light-color: #90a4af;
+$dark-color: #273238;
+$light-grey: #ddd;
+$white: #fff;
+$grey: #bcbbc6;
+$green: #afc536;
+$dark-green: #99ac30;
+$mail-body: #f1f1f1;
+
+
+/**
+ *	Import vendor dependencies
+ */
+@import '../vendor/bootstrap/dist/css/bootstrap.min';
+@import '../vendor/backgrid/lib/backgrid.min.css';
+
+
+/**
+ *	Import font and icon dependencies
+ *	Import style files
+ */
+@import '_fonts';
+@import '_navigation';
+@import '_cover';
+@import '_style';
+@import '_navbar_collapse';
+@import '_chosen';
+
+body {
+  overflow: auto !important;
+}

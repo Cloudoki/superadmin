@@ -1,69 +1,38 @@
 define(
-	['backbone', 'Session', 'Router', 'config'],
-	function (Backbone, Session, Router, config)
+	['backbone', 'Session', 'Router', 'config', 'Views/Navigation'],
+	function (Backbone, Session, Router, config, NavigationView)
 	{
 		var Superadmin = {
 
-			version : 1,
-			authentication: false,	// Ignores token
-			dev: true,
+			passthrough: "the-Golden-Key-28chars-token",	// Ignores token if not null
 
 			init : function ()
 			{
-				// Load configs
-				Superadmin.config = config;
-				Superadmin.Api = config.apiurl;
-				Superadmin.Session = Session;
+				// Authentication
+				Session.authenticate (this.passthrough);
 
-				if (this.authentication) {
-					if (this.dev)	this.authenticate(true);
-					else			this.authenticate();
-
-					this.loadUserData();
-				}
-				else
-					this.begin();
+				// Set config
+				this.config = config;
+				this.config.url = config.apiurl + config.apiversion + '/';
 
 				return this;
 			},
 
-			// Oauth2 Authentication
-			authenticate: function(dev) {
-
-				var token = window.localStorage.getItem('token');
-
-				//Check if there is authentication
-				if(token && token.length > 9)
+			activate: function ()
+			{
+				// First load essential user data
+				Session.loadEssentialData (function ()
 				{
-					Superadmin.Session.authenticationtoken = token;
-					Backbone.accesstoken = token;
+					// And then rout the router.
+					this.router = new Router ();
 
-				}
-				else {
-					if (dev)
-						this.authenticationtoken = "the-Golden-Key-28chars-token";
-					else
-						window.location = "/login.html";
-				}
-			},
+					// Load navigation
+					this.navigation = new NavigationView (this);
+					$('nav.navbar').html(this.navigation.render().el);
 
-			// Get User data after authentication;
-			// Inits the backbone views & router
-			loadUserData: function() {
+					Backbone.history.start();
 
-				this.Session.loadEssentialData (function ()	{
-
-					this.begin();
-				});
-			},
-
-			// Callbak function after user authentication
-			begin: function() {
-
-				// Router
-				Superadmin.Router = new Router ();
-
-				Backbone.history.start();
+				}.bind (this));
 			}
 		};
 
@@ -83,8 +52,6 @@ define(
 			return Backbone.$.ajax.apply(Backbone.$, arguments);
 		};
 
-    	return Superadmin;
+    return Superadmin;
 	}
 );
-
-
