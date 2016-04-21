@@ -67,6 +67,9 @@ define (
 					});
 				}
 			},
+			parse: function(response) {
+				return	response.data;
+			}
 		});
 
 		return Accounts;

@@ -13,7 +13,7 @@ define(
 
 				// Set config
 				this.config = config;
-				this.config.url = config.apiurl + config.apiversion + '/';
+				this.config.url = config.apiurl;
 
 				return this;
 			},

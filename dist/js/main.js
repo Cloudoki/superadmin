@@ -24,7 +24,7 @@ require.config(
 		underscore:	'/vendor/underscore/underscore-min',
 		mustache:	'/vendor/mustache.js/mustache',
 		bootstrap:	'/vendor/bootstrap/dist/js/bootstrap.min',
-		backgrid:	'/vendor/backgrid/lib/backgrid.min',
+		backgrid:	'/vendor/backgrid/lib/backgrid',
 		chosen: '/vendor/chosen/chosen.jquery'
 	},
 	urlArgs: "bust=" +  (new Date()).getTime()
