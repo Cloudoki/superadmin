@@ -12,7 +12,6 @@ define(
 
 				// Check if there is authentication
 				if(token || fallback)
-
 					this.authenticationtoken = token && token.length >= 18? token: fallback;
 
 				else window.location = "/login.html";
@@ -22,6 +21,8 @@ define(
 			// Loads logged user data
 			loadEssentialData : function (callback)
 			{
+				if (!this.authenticationtoken)	return;
+
 				// Load me.
 				this.user = new Me ();
 				this.user.fetch({error: this.revoke});

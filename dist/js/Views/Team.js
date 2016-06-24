@@ -70,7 +70,12 @@ define (
 				{avatar:'https://avatars0.githubusercontent.com/u/11923809?v=3&s=460', github:'a31859', name: 'Délio Amaral', twitter: 'dnva_13', email: 'delio@cloudoki.com'},
 				{avatar:'https://avatars1.githubusercontent.com/u/5833937?v=3&s=460', github:'ErikRFerreira', name: 'Erik Ferreira', twitter: 'Erik__Ferreira', email: 'erik@cloudoki.com'},
 				{avatar:'https://avatars3.githubusercontent.com/u/17081313?v=3&s=460', github:'TomasTM', name: 'Tomás',  email: 'tomas@cloudoki.com'},
-				{avatar:'https://avatars0.githubusercontent.com/u/5821795?v=3&s=460', github:'andremarceloteixeira', name: 'Marcelo Teixeira', email: 'marcelo@cloudoki.com'}
+				{avatar:'https://avatars2.githubusercontent.com/u/5064023?v=3&s=460', github:'ricmalta', name: 'Ricardo Malta', twitter: 'ricmalta', email: 'ricardo@cloudoki.com'},
+				{avatar:'https://avatars1.githubusercontent.com/u/7128601?v=3&s=460', github:'nmcpcj', name: 'Nuno Jorge', twitter: 'rnmcpcj', email: 'nuno@cloudoki.com'},
+				{avatar:'https://avatars0.githubusercontent.com/u/19777410?v=3&s=460', github:'tiagoraposeira', name: 'Tiago Raposeira', twitter: 'TRaposeira', email: 'tiago@cloudoki.com'},
+				{avatar:'https://pbs.twimg.com/profile_images/628572134529331201/TK59DD-D_400x400.jpg', name: 'Tim de Coninck', twitter: 'a_cup_of_t', email: 'tim@cloudoki.com'},
+				{avatar:'https://pbs.twimg.com/profile_images/526112204643262464/AbZZoRYS_400x400.jpeg', name: 'Simon', twitter: 'simonflore', email: 'simon@cloudoki.com'},
+				{avatar:'https://pbs.twimg.com/profile_images/498552217461202944/WFCiQEGR_400x400.jpeg', name: "Hannes D'Hulster", twitter: 'hannesdh', email: 'hannes@cloudoki.com'},
 			],
 
 			servers :
