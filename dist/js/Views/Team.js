@@ -74,7 +74,7 @@ define (
 				{avatar:'https://avatars1.githubusercontent.com/u/7128601?v=3&s=460', github:'nmcpcj', name: 'Nuno Jorge', twitter: 'rnmcpcj', email: 'nuno@cloudoki.com'},
 				{avatar:'https://avatars0.githubusercontent.com/u/19777410?v=3&s=460', github:'tiagoraposeira', name: 'Tiago Raposeira', twitter: 'TRaposeira', email: 'tiago@cloudoki.com'},
 				{avatar:'https://pbs.twimg.com/profile_images/628572134529331201/TK59DD-D_400x400.jpg', name: 'Tim de Coninck', twitter: 'a_cup_of_t', email: 'tim@cloudoki.com'},
-				{avatar:'https://pbs.twimg.com/profile_images/526112204643262464/AbZZoRYS_400x400.jpeg', name: 'Simon', twitter: 'simonflore', email: 'simon@cloudoki.com'},
+				{avatar:'https://avatars2.githubusercontent.com/u/1303775?v=3&s=460', github:'simonverboven', name: 'Simon', email: 'simon@cloudoki.com'},
 				{avatar:'https://pbs.twimg.com/profile_images/498552217461202944/WFCiQEGR_400x400.jpeg', name: "Hannes D'Hulster", twitter: 'hannesdh', email: 'hannes@cloudoki.com'},
 			],
 
