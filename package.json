@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Backbone boilerplate with oauth, mustache, gulp & bower",
   "homepage": "www.cloudoki.com",
-  "author": "Rui Molefas",
-  "email": "rui@cloudoki.com",
+  "author": "Erik Ferreira",
+  "email": "erik@cloudoki.com",
   "dependencies": {
     "bower": "^1.4.1",
     "del": "^1.2.0",
